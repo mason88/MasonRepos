@@ -3,28 +3,30 @@
 
 ## Steps to install and run
 
-    First, make sure you have docker installed.
+First, make sure you have docker installed. Then run following commands:
 
-    ```git clone https://github.com/mason88/MasonRepos.git```
-    
-    ```cd MasonRepos```
-    
-    ```cp .env.example .env```
-    
-    ```
-    docker run --rm \
-    -u "$(id -u):$(id -g)" \
-    -v "$(pwd):/var/www/html" \
-    -w /var/www/html \
-    laravelsail/php81-composer:latest \
-    composer install --ignore-platform-reqs
-    ```
-    
-    ```./vendor/bin/sail up -d```
-    
-    ```./vendor/bin/sail artisan key:generate```
-    
-    Open http://127.0.0.1 in web browser
+```git clone https://github.com/mason88/MasonRepos.git```
+
+```cd MasonRepos```
+
+```cp .env.example .env```
+
+```
+docker run --rm \
+-u "$(id -u):$(id -g)" \
+-v "$(pwd):/var/www/html" \
+-w /var/www/html \
+laravelsail/php81-composer:latest \
+composer install --ignore-platform-reqs
+```
+
+```./vendor/bin/sail up -d```
+
+```./vendor/bin/sail artisan key:generate```
+
+```./vendor/bin/sail artisan migrate```
+
+Open http://127.0.0.1 in web browser
 
 ## Notes on implementation
 
